@@ -1,47 +1,50 @@
-from file_tools import csv_tools
+class interpreter:
+    def __init__(self, dict1, dict2):
+        self.symbols={'+', '-', '>', '<', '.', ',', '[', ']'}
+
+        self.ascii_dict_c = dict1
+        self.ascii_dict_s = dict2
+    
+    def reset(self):
+        self.n=''
+        self.pointer_pos=0
+        self.pos=0
+        self.largest=0
+        self.smallest=0
+        self.output=''
 
 
-a=f'++><h\nh\nh+.'
+    def do(self, code_string):
+        self.reset()
+        for i in code_string:
+            if i in self.symbols:
+                if i == '<':
+                    self.pos-=1
+                    if self.pos < self.smallest:
+                        self.smallest = self.pos
+                elif i == '>':
+                    self.pos+=1
+                    if self.pos > self.largest:
+                        self.largest = self.pos
+                self.n+=i
 
-symbols={'+', '-', '>', '<', '.', ',', '[', ']'}
+        self.t=[0 for i in range(abs(self.largest)+abs(self.smallest)+1)]
+        print(self.pos)
 
-n=''
-
-pointer_pos=0
-pos=0
-largest=0
-smallest=0
-
-ascii_dict_c = csv_tools.csv_tools.csv_reader(r'ASCII_tables\ascii-table.csv', k='asciicode')
-ascii_dict_s = csv_tools.csv_tools.csv_reader(r'ASCII_tables\ascii-table.csv', k='symbol')
-
-
-for i in a:
-    if i in symbols:
-        if i == '<':
-            pos-=1
-            if pos < smallest:
-                smallest = pos
-        elif i == '>':
-            pos+=1
-            if pos > largest:
-                largest = pos
-        n+=i
-
-t=[0]*(largest-smallest)
-
-output=''
-
-for c in n:
-    if c=='+':
-        t[pointer_pos]+=1
-    elif c=='-':
-        t[pointer_pos]-=1
-    elif c=='>':
-        pointer_pos+=1
-    elif c=='<':
-        pointer_pos+=1
-    elif c==',':
-        t[pointer_pos]=ascii_dict_s[input()[0]]['asciicode']
-    elif c=='.':
-        print(ascii_dict_c[t[pointer_pos]])
+        print(self.t)
+        for c in self.n:
+            print(self.pointer_pos)
+            if c=='+':
+                self.t[self.pointer_pos]+=1
+            elif c=='-':
+                self.t[self.pointer_pos]-=1
+            elif c=='>':
+                self.pointer_pos+=1
+            elif c=='<':
+                self.pointer_pos+=1
+            elif c==',':
+                self.t[self.pointer_pos]=self.ascii_dict_s[input()[0]]['asciicode']
+            elif c=='.':
+                self.output+=self.ascii_dict_c[self.t[self.pointer_pos]]
+        print(self.output)
+        return self.output

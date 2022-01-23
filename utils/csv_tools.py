@@ -1,10 +1,7 @@
 import csv
 
 class csv_tools:
-    def __init__(self):
-        pass
-
-    def csv_reader(self, path, k='symbol', character_encoding='utf8'):
+    def csv_reader(path, k='symbol', character_encoding='utf8'):
         p = {'asciicode':0, 'symbol':1, 'description':2}
         a = p[k]
         p.pop(k)
