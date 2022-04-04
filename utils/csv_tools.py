@@ -10,7 +10,11 @@ class csv_tools:
             csvr = csv.reader(csvf)
             dict_headers=next(csvr)
             dataset_dict={}
-            for row in csvr:
-                dataset_dict[row[a]]={dict_headers[i]:row[i] for i in p.values()}
+            if a == 0:
+                for row in csvr:
+                    dataset_dict[int(row[a])]={dict_headers[i]:row[i] for i in p.values()}
+            else:
+                for row in csvr:
+                    dataset_dict[row[a]]={dict_headers[i]:row[i] for i in p.values()}
         
         return dataset_dict

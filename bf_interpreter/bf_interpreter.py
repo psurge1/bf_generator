@@ -1,3 +1,7 @@
+from enum import Enum
+from tkinter import LEFT
+
+
 class interpreter:
     def __init__(self, dict1, dict2):
         self.symbols={'+', '-', '>', '<', '.', ',', '[', ']'}
@@ -29,11 +33,11 @@ class interpreter:
                 self.n+=i
 
         self.t=[0 for i in range(abs(self.largest)+abs(self.smallest)+1)]
-        print(self.pos)
+        # print(self.pos)
 
-        print(self.t)
+        # print(self.t)
         for c in self.n:
-            print(self.pointer_pos)
+            # print(f'{self.pointer_pos}: {self.t}')
             if c=='+':
                 self.t[self.pointer_pos]+=1
             elif c=='-':
@@ -41,10 +45,22 @@ class interpreter:
             elif c=='>':
                 self.pointer_pos+=1
             elif c=='<':
-                self.pointer_pos+=1
+                self.pointer_pos-=1
             elif c==',':
                 self.t[self.pointer_pos]=self.ascii_dict_s[input()[0]]['asciicode']
             elif c=='.':
-                self.output+=self.ascii_dict_c[self.t[self.pointer_pos]]
+                self.output+=self.ascii_dict_c[self.t[self.pointer_pos]]['symbol']
         print(self.output)
         return self.output
+
+class Direction(Enum):
+    LEFT = -1
+    RIGHT = 1
+
+class tape:
+    def __init__(self, size, pointer):
+        
+        self.pointer=pointer
+    
+    def move(self, direction):
+        self.pointer+=direction
