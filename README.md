@@ -1,4 +1,4 @@
-##BF Interpreter
+## BF Interpreter
 
 This repository hosts a working interpreter for the bf language
 
