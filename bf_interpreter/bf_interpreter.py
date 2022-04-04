@@ -33,11 +33,8 @@ class interpreter:
                 self.n+=i
 
         self.t=[0 for i in range(abs(self.largest)+abs(self.smallest)+1)]
-        # print(self.pos)
 
-        # print(self.t)
         for c in self.n:
-            # print(f'{self.pointer_pos}: {self.t}')
             if c=='+':
                 self.t[self.pointer_pos]+=1
             elif c=='-':
