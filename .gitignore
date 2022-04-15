@@ -1,7 +1,5 @@
 .vscode/
-/__pycache/
-/__pycache/
-/__pycache/
+__pycache__/
 m.py
 visualizer.txt
 bf_code/*
