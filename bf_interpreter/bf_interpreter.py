@@ -1,13 +1,9 @@
 from enum import Enum
-from tkinter import LEFT
 
 
 class interpreter:
-    def __init__(self, dict1, dict2):
+    def __init__(self):
         self.symbols={'+', '-', '>', '<', '.', ',', '[', ']'}
-
-        self.ascii_dict_c = dict1
-        self.ascii_dict_s = dict2
     
     def reset(self):
         self.n=''
@@ -18,7 +14,7 @@ class interpreter:
         self.output=''
 
 
-    def do(self, code_string):
+    def do(self, code_string, print_result=False):
         self.reset()
         for i in code_string:
             if i in self.symbols:
@@ -44,10 +40,11 @@ class interpreter:
             elif c=='<':
                 self.pointer_pos-=1
             elif c==',':
-                self.t[self.pointer_pos]=self.ascii_dict_s[input()[0]]['asciicode']
+                self.t[self.pointer_pos]=ord(input()[0])
             elif c=='.':
-                self.output+=self.ascii_dict_c[self.t[self.pointer_pos]]['symbol']
-        print(self.output)
+                self.output+=chr(self.t[self.pointer_pos])
+        if print_result:
+            print(self.output)
         return self.output
 
 class Direction(Enum):
