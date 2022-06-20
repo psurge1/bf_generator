@@ -12,6 +12,17 @@
     height: 100px;
 }
 
-/* .title {
-    
-} */
+.title {
+    text-align: center;
+}
+
+html {
+    height: 100%;
+    background-color: #955FC2;
+    background: -webkit-linear-gradient(45deg, #FF5035, #6766FF);
+    background: -moz-linear-gradient(45deg, #FF5035, #6766FF);
+    background: -ms-linear-gradient(45deg, #FF5035, #6766FF);
+    background: -o-linear-gradient(45deg, #FF5035, #6766FF);
+    background-image: linear-gradient(45deg, #FF5035, #6766FF);
+  }
+  
