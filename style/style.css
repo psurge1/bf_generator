@@ -31,7 +31,7 @@
     margin-left: 2%;
     margin-right: 2%;
     width: 96%;
-    height: 300px;
+    min-height: 300px;
     border-radius: 2px;
     background-color: #6766FF;
 }
@@ -57,6 +57,32 @@
     background-color: #FF5035;
 }
 
+.page-buttons {
+    margin-top: 1%;
+    margin-left: 1%;
+    width: 50px;
+    border-radius: 2px;
+}
+
+.page-buttons:link, .page-buttons:visited {
+  background-color: #B35B9A;
+  color: black;
+  /* padding: 10px 20px; */
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.page-buttons:hover, .page-buttons:active {
+  background-color: #D15772;
+  color: white;
+}
+
+.help-text {
+    width: 80%;
+    margin-left: 10%;
+}
+
 html {
     height: 100%;
     background-color: #955FC2;
@@ -66,4 +92,3 @@ html {
     background: -o-linear-gradient(45deg, #FF5035, #6766FF);
     background-image: linear-gradient(45deg, #FF5035, #6766FF);
   }
-  
