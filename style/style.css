@@ -41,7 +41,11 @@
     margin-left: 2%;
     border-radius: 2px;
     background-color: #6766FF;
-    width: 50px;
+    width: 7%;
+}
+
+.display-checkbox {
+    margin-left: 1%;
 }
 
 .output {
@@ -81,6 +85,24 @@
 .help-text {
     width: 80%;
     margin-left: 10%;
+}
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td {
+    border: 4px solid #000000;
+    text-align: center;
+    padding: 8px;
+}
+
+th {
+    border: 4px solid #000000;
+    text-align: center;
+    padding: 8px;
 }
 
 html {
