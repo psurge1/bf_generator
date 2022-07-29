@@ -1,4 +1,4 @@
-## [https://psurge1.github.io/bf_interpreter/](BF Interpreter)
+[https://psurge1.github.io/bf_interpreter/](## BF Interpreter)
 
 This repository hosts an interpreter for the BF language
 
