@@ -1,8 +1,8 @@
-[https://psurge1.github.io/bf_interpreter/](## BF Interpreter)
-
-This repository hosts an interpreter for the BF language
+## BF Interpreter
 
 [psurge1.github.io/bf_interpreter](https://psurge1.github.io/bf_interpreter/) is a website interface for the BF interpreter written in pyscript.
+
+This repository hosts an interpreter for the BF language
 
 [PyScript](https://pyscript.net/)
 
